@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eleanor Hart — English Teacher & College Counsellor</title>
-<meta name="description" content="English teacher and college counsellor. Teaching literature, coaching personal statements, and guiding students through the university journey.">
+<title>Enkhjin Amarbaysgalan — Student Portfolio</title>
+<meta name="description" content="Student portfolio of Enkhjin Amarbaysgalan — aspiring marketer, school journalist, and Red Cross member interested in society and international relations.">
 <style>html,body{margin:0;padding:0}</style>
 </head>
 <body>
@@ -267,8 +267,8 @@
   async function loadData(){ try{const r=localStorage.getItem(K_DATA); if(r) return JSON.parse(r);}catch(e){} return null; }
   async function saveData(d){ try{localStorage.setItem(K_DATA,JSON.stringify(d));return true;}catch(e){return false;} }
   async function getPw(){ try{const r=localStorage.getItem(K_PW); if(r) return JSON.parse(r);}catch(e){} return null; }
-  async function setPw(p){ try{localStorage.setItem(K_PW,JSON.stringify(p));return true;}catch(e){return false;} }
-  async function hash(s){ try{const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,"0")).join("");}catch(e){return "p:"+s;} }
+  async function setPw(p){ try{localStorage.setItem(K_PW,JSON.stringify(p)); return localStorage.getItem(K_PW)!=null;}catch(e){return false;} }
+  async function hash(s){ try{ if(window.crypto&&crypto.subtle&&window.isSecureContext){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,"0")).join("");} }catch(e){} let h=5381; for(let i=0;i<s.length;i++){h=((h<<5)+h)+s.charCodeAt(i); h|=0;} return "f:"+(h>>>0).toString(16)+":"+s.length; }
 
   const esc=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
   const escEm=s=>esc(s).replace(/&lt;em&gt;/g,"<em>").replace(/&lt;\/em&gt;/g,"</em>");
@@ -281,63 +281,65 @@
   const DEFAULT={
     bg:"__USE_DEFAULT__",   // owner-controlled site background (shared)
     accent:"#C7CB6E",
-    brand:"Eleanor Hart",
-    role:"English Teacher · College Counsellor",
-    loc:"Edinburgh & online · taking students for 2026",
-    heroTitle:"Reading closely, <em>writing</em> bravely, choosing wisely.",
-    heroLead:"I teach literature like it still matters — because it does — and I walk beside students through the college search until the road ahead feels like theirs.",
-    s1n:"12", s1l:"Years in the classroom",
-    s2n:"300+", s2l:"Students counselled",
-    s3n:"40", s3l:"Universities, 12 countries",
-    s4n:"94%", s4l:"First-choice offers",
-    aboutTitle:"A classroom is where a young person decides who they are.",
-    aboutP1:"For more than a decade I've taught English to teenagers standing at the edge of adulthood — the years when a person works out what they think, how they argue, and what they're willing to stand for. Good teaching, to me, is rigour and warmth in equal measure.",
-    aboutP2:"As a counsellor I sit beside students through one of the largest decisions of their young lives. I help them write true things about themselves, choose universities that genuinely suit them, and walk toward the future with steadiness instead of dread.",
-    aboutP3:"No two students arrive the same way, so no two plans look alike. The work is patient, particular, and — when it goes well — quietly transforming.",
+    brand:"Enkhjin Amarbaysgalan",
+    role:"Student · Aspiring Marketer",
+    loc:"Mongolia · Born 20 June 2009 · Class of 2027",
+    heroTitle:"Curious about <em>people</em>, drawn to the wider world.",
+    heroLead:"I'm a high-school student with a growing love for marketing and a real interest in society and international relations \u2014 I learn most by getting involved, whether that's writing for the school paper or volunteering with the Red Cross.",
+    s1n:"2009", s1l:"Year born",
+    s2n:"3+", s2l:"Clubs & activities",
+    s3n:"Marketing", s3l:"Future field",
+    s4n:"Red Cross", s4l:"Volunteer member",
+    aboutTitle:"Still learning, already involved.",
+    aboutP1:"My name is Enkhjin Amarbaysgalan and I'm a student who likes to be in the middle of things. I'm fascinated by how people and societies work, and I'm increasingly drawn to marketing \u2014 the craft of understanding an audience and telling a story that reaches them.",
+    aboutP2:"Outside of class I stay active in school life. I've worked as a school journalist, taken part in the girls' club, and joined training on education and health. Each of those has taught me something different about communication, responsibility, and working with others.",
+    aboutP3:"As a Red Cross member I care about community and the world beyond my own \u2014 part of why society and international relations interest me so much. I'm building toward a future where I can combine creativity with purpose.",
     tenets:[
-      {t:"Literature, kept alive",d:"Texts as arguments worth having, not boxes to tick. Close reading that becomes real thinking."},
-      {t:"Counsel before persuasion",d:"University choices grounded in who a student is — not where they're 'supposed' to go."},
-      {t:"The student, first",d:"Every plan is shaped around the person: their pace, their language, their ambition."},
-      {t:"Writing with a pulse",d:"From the literary essay to the personal statement — prose that sounds like a human wrote it."}
+      {t:"Curiosity first",d:"I ask a lot of questions \u2014 about people, cultures, and why things work the way they do."},
+      {t:"Get involved",d:"I learn best by taking part: clubs, journalism, training, and volunteering."},
+      {t:"Communicate clearly",d:"From writing articles to working in a team, getting the message across matters to me."},
+      {t:"Care about community",d:"Through the Red Cross I try to give something back and look outward to the wider world."}
     ],
-    offersTitle:"How I work with students.",
-    offersSub:"Teaching and counselling, treated as the serious, hopeful work they are.",
+    offersTitle:"What I'm building toward.",
+    offersSub:"My interests, strengths, and the directions I'm exploring as a student.",
     offers:[
-      {t:"English Literature & Language",d:"Curriculum-aligned teaching that turns reluctant readers into confident analysts — close reading, essay craft, and exam technique that hold up under pressure."},
-      {t:"The Personal Statement",d:"One-to-one work to find and shape the single story only this student can tell. Honest, particular, and unmistakably theirs."},
-      {t:"University Fit & Strategy",d:"A researched shortlist built around strengths, goals, budget, and the kind of life a student actually wants for the next four years."},
-      {t:"Test Preparation",d:"Structured IELTS, TOEFL, and SAT preparation — clear targets, a steady rhythm of practice, and the calm to perform on the day."},
-      {t:"Interview Coaching",d:"Mock interviews and frank feedback so a student can speak about themselves with warmth, clarity, and conviction."},
-      {t:"The Whole Application",d:"Deadlines, references, and documents managed end to end — so families can breathe while the process runs on time."}
+      {t:"Marketing",d:"My main aspiration \u2014 I want to understand audiences and learn how ideas, brands, and messages connect with people."},
+      {t:"Society & International Relations",d:"I'm curious about how communities and countries work together, and how global issues shape everyday life."},
+      {t:"Journalism & Writing",d:"As a school journalist I've practised reporting, interviewing, and writing clearly for a real audience."},
+      {t:"Girls' Club",d:"An active member \u2014 building friendships, confidence, and a space to share ideas and support one another."},
+      {t:"Education & Health Training",d:"I took part in training on education and health, learning skills I can share with others in my community."},
+      {t:"Red Cross Volunteering",d:"A member of the Red Cross, contributing to community service and humanitarian awareness."}
     ],
-    expTitle:"The path so far.",
-    roleHead:"Appointments", roleHeadR:"2012 — now",
+    expTitle:"Activities & achievements.",
+    roleHead:"Involvement", roleHeadR:"School years",
     timeline:[
-      {yr:"2018 — Present",t:"Head of English & University Guidance",org:"Meridian International School",d:"Lead the English department and the school's college counselling programme."},
-      {yr:"2014 — 2018",t:"Teacher of English",org:"St. Vincent Academy",d:"Taught literature and language across the upper years; founded the creative-writing elective."},
-      {yr:"2012 — 2014",t:"Teaching Fellow",org:"City Education Trust",d:"Literacy and exam support for students from under-resourced communities."}
+      {yr:"Ongoing",t:"School Journalist",org:"School newspaper",d:"Reported on school life and events, practising interviewing and clear writing."},
+      {yr:"Ongoing",t:"Member, Girls' Club",org:"School activity",d:"Active participant \u2014 collaboration, leadership, and a supportive community."},
+      {yr:"Completed",t:"Education & Health Training",org:"Programme participant",d:"Took part in training focused on education and health awareness."},
+      {yr:"Member",t:"Red Cross",org:"Volunteer",d:"Community service and humanitarian work as a Red Cross member."}
     ],
     eduHead:"Education", eduHeadR:"",
     education:[
-      {yr:"2012",t:"MA, English Literature",org:"University of Edinburgh"},
-      {yr:"2011",t:"PGCE, Secondary English",org:"University of Edinburgh"},
-      {yr:"2020",t:"Certified College Counsellor — UCAS & US",org:"CPD"}
+      {yr:"Present",t:"High School Student",org:"Class of 2027"},
+      {yr:"Focus",t:"Interest: Marketing",org:"Future field of study"},
+      {yr:"Interest",t:"Society & International Relations",org:"Area of curiosity"}
     ],
-    skills:["Close reading","Essay craft","UCAS","Common App","IELTS","TOEFL","SAT","Personal statements","Interview prep","Scholarships","Creative writing","Curriculum design"],
-    voicesTitle:"In their own words.",
+    skills:["Marketing","Journalism","Writing","Teamwork","Communication","Public speaking","Community service","Leadership","Research","Creativity","English","Volunteering"],
+    voicesTitle:"A little more about me.",
     voices:[
-      {q:"She didn't just help me get in — she helped me work out what I actually wanted. My statement finally sounded like me.",n:"Priya S.",r:"University of Toronto"},
-      {q:"The best English teacher our daughter ever had. She made literature feel like it mattered, and her guidance was honest and kind.",n:"The Okonkwo family",r:"Parents"},
-      {q:"Calm and organised in a season that's usually neither. For the first time the applications felt under control.",n:"Daniel M.",r:"London School of Economics"},
-      {q:"I went from dreading essays to almost enjoying them. That confidence ended up carrying into everything else.",n:"Aisha R.",r:"Former student"}
+      {q:"I'm happiest when I'm involved \u2014 writing a story, joining a club, or helping out where I can.",n:"On getting involved",r:""},
+      {q:"Marketing pulls together everything I enjoy: people, ideas, and communication.",n:"On my future",r:""},
+      {q:"The Red Cross taught me to look beyond myself and think about my community and the wider world.",n:"On volunteering",r:""},
+      {q:"Society and international relations fascinate me \u2014 how people and countries connect.",n:"On my interests",r:""}
     ],
-    contactTitle:"Let's plan the <em>next chapter</em>.",
-    contactLead:"Student, parent, or school — I'd love to hear from you. Tell me where you are, and we'll find the next step together.",
-    email:"eleanor@hartmentoring.com",
-    phone:"+44 131 555 0142",
-    book:"Book an introductory call",
+    contactTitle:"Let's <em>connect</em>.",
+    contactLead:"Thanks for visiting my portfolio. Feel free to reach out if you'd like to know more about me, my activities, or my goals.",
+    email:"kkizu0625@gmail.com",
+    phone:"+976 9412 6626",
+    instagram:"kzukkni",
+    book:"Get in touch",
     bookUrl:"#contact",
-    footer:"Made for students and the families who believe in them."
+    footer:"Student portfolio \u2014 Enkhjin Amarbaysgalan."
   };
 
   function bgValue(){
@@ -457,7 +459,7 @@
           <div class="clist">
             <a href="mailto:${esc(d.email)}"><span class="k">Email</span><span class="v" data-edit="email">${esc(d.email)}</span></a>
             <a href="tel:${esc(d.phone).replace(/[^0-9+]/g,'')}"><span class="k">Phone</span><span class="v" data-edit="phone">${esc(d.phone)}</span></a>
-            <a href="${esc(d.bookUrl)}" target="_blank" rel="noopener"><span class="k">Calendar</span><span class="v" data-edit="book">${esc(d.book)}</span></a>
+            ${d.instagram?`<a href="https://www.instagram.com/${esc(d.instagram)}/" target="_blank" rel="noopener"><span class="k">Instagram</span><span class="v" data-edit="instagram">@${esc(d.instagram)}</span></a>`:""}
           </div>
         </div>
       </div></section></div>
@@ -573,7 +575,8 @@
       s.querySelector("#go").onclick=async()=>{const a=s.querySelector("#p1").value,b=s.querySelector("#p2").value,er=s.querySelector("#er");
         const e=m=>{er.textContent=m;er.style.display="block";};
         if(a.length<6)return e("Use at least 6 characters."); if(a!==b)return e("Passwords don't match.");
-        await setPw(await hash(a)); isOwner=true; closeModal(); render(); setEditing(true); toast("Owner account created");};
+        const ok=await setPw(await hash(a)); if(!ok)return e("Couldn't save the password (private browsing or storage blocked). Disable incognito and try again.");
+        isOwner=true; closeModal(); render(); setEditing(true); toast("Owner account created");};
     }else{
       modal(`<div class="em">Welcome back</div><h3>Owner login</h3><p>Enter your password to edit the site.</p>
         <div class="field"><label>Password</label><input id="p1" type="password" placeholder="Your password"></div>
@@ -634,6 +637,6 @@
 })();
 </script>
 
-    <script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
